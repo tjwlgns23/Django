@@ -12,3 +12,6 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.firstName
+    
+    # def __test__(self):
+    #     return self.objects.all

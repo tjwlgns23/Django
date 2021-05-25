@@ -13,7 +13,14 @@ class IndexView(ListView):
 
 class ContactDetailView(DetailView):
     model = Contact
+    
     template_name = 'crudapp/contact-detail.html'
+    context_object_name = 'detail'
+
+def get(request, pk, template_name='crudapp/contact-detail.html'):
+    contact = get_object_or_404(Contact, pk=pk)
+    return render(request, template_name, {'contact': contact})
+
 
 def create(request):
     if request.method == 'POST':
