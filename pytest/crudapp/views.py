@@ -13,7 +13,8 @@ class IndexView(ListView):
 
 class ContactDetailView(DetailView):
     model = Contact
-    
+    fields = '__all__'
+
     template_name = 'crudapp/contact-detail.html'
     context_object_name = 'detail'
 
